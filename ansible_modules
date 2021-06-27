@@ -1,0 +1,6 @@
+#Ansible modules are Reuseable Standalone scripts.
+for example:
+
+ansible linux_servers -m apt-get -a "pkg=apache2 state=present"
+#To delete apache2 
+ansible linux_servers -m apt-get a "pkg=apache2 state=absent"
