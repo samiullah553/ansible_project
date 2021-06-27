@@ -1,0 +1,12 @@
+#Adhoc commands is basically simple linux one time usage commands
+adhoc commands start with 1="ansible" keyword 2="group name" 3=argument "mean execute the inverted comma commands" 
+
+for example:
+ansible linux_servers -a "ls" #linux_servers is the group name which contain ip addresses of the servers
+ansible linux_servers -a "touch file1"
+ansible linux_servers -a "sudo apt-get install python3"
+ansible linux_servers -a "sudo apt-get install apache2" 
+
+Important to NOTE
+In adhoc commands there is no idempotency.
+
