@@ -1,0 +1,19 @@
+#This is all about how to create ansible playbook.
+playbook are devided int the follwing section.
+1_ Target section (Here we will define targeted nodes )
+2_ Variable section (This is optional variable is basically used to ignore hard-coding)
+3_ Tasks section (List of modules that we need to RUN)
+
+#Most important playbook are written in yaml format (Human readable data serialization language) extension shuld be .yaml or .yml
+Syntax
+start with three hypens
+--- 
+- hosts: ios_routers
+  connection: ssh, local,
+  gather_facts: yes or no
+
+  tasks:
+  module_name:
+     
+...
+End with three dots but this is optional not mandatory.
