@@ -2,11 +2,14 @@
 #Installation
 #sudo apt-get update
 #sudo apt-get install ansible -y
+IF YOU CENTOS USER THEN COMMANDS WILL BE.
+sudo yum update
+sudo yum install ansible -y
 #Once you install ansible then you need to configure ansible.cfg and hosts files
 #1 ansible.cfg file contain all the configuration of ansible.
 #for example
 
-#d[defualts]
+#[defualts]
 #inventory =./hosts
 #forks =10 (mixmum hosts range)
 #timeout=15 
@@ -27,4 +30,4 @@
 #[csr_routers]
 #9.1.1.[4:9]
 
-#to run playbook use this command ansible-playbook -v <playbook-name> -u <username> -k
+#To run playbook use this command ansible-playbook -v <playbook-name> -u <username> -k
