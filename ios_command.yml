@@ -1,0 +1,16 @@
+---
+- name: ios_command module for cisco ios devices
+- hosts: ios_routers
+  connection: ssh
+  gather_facts: no
+
+  tasks:
+    - name: only for show ip interfaces       
+      ios_commnad:
+         commands:
+                 - show ip interface brief
+
+      register: data
+    - name: Show the data which is present in data variable
+      debug:
+              var: data["stdout_lines"][0]      

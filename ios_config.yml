@@ -1,0 +1,21 @@
+---
+- name: use ios_config module to configure device
+- hosts: ios_routers
+  connection: local
+  gather_facts: yes
+
+  tasks:
+  - name: configure loopbacks
+    ios_config:
+            lines:
+                - interface loopback 10
+                - ip address 10.10.10.10 255.255.255.0
+                - no shutdown
+                - interface loopback 11
+                - ip address 11.11.11.11 255.255.255.255
+                - no shutdown
+ - name: configure ntp servers
+   ios_config:
+           lines:
+               - ntp 192.168.11.123
+               - ntp 12.12.12.100

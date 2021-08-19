@@ -1,0 +1,18 @@
+--- 
+- hosts: ios_swicthes
+  connection: ssh
+  gather_facts: yes
+
+  tasks:
+       ios_vlans:
+           config:
+           - name: vlan_for_IT #Define the name of vlan that you want to create.
+             vlan_id: 10       #Here we will define the id of vlan from (2-4096).
+             state: active     #state mean operational state of vlans. two operational states(active and suspend)
+             shutdown: disable #Two possiability (disable and enable),(shutdown: enable)mean shutdown and (shutdown: disable)mean no shutdown. 
+           - name: vlan_for_cs
+             vlan_id: 20
+             state: active
+             shutdown: enable
+           state: merged
+

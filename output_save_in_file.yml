@@ -1,0 +1,17 @@
+--- #this script is to save output in file
+- hosts: ios_routers #group of routers
+  connection: ssh
+  gather_facts: no
+
+  tasks:
+  - name: Startup-Configuration
+    ios_command:
+          lines:
+              - show startup-config
+              - show ip interface brief
+    register: if_data
+    - name: output
+      debug:
+              var: if_data
+      copy: content="{{if_data}}" dest="/home/Desktop/startup-config.txt" 
+
